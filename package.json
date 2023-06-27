@@ -1,0 +1,59 @@
+{
+  "name": "req2curl",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
+  "typings": "dist/esm/index.d.mts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/esm/index.mjs",
+      "typings": "./dist/esm/index.d.mts"
+    }
+  },
+  "scripts": {
+    "lint": "eslint --quiet --ext ts,tsx .",
+    "clean": "rimraf dist artifact",
+    "prerollup:dev": "npm run clean",
+    "rollup:dev": "cross-env NODE_ENV=production rollup --config ./.configs/rollup.config.dev.ts --configPlugin ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geunyoungno/req2curl.git"
+  },
+  "author": "geunyoungno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geunyoungno/req2curl/issues"
+  },
+  "homepage": "https://github.com/geunyoungno/req2curl#readme",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@tsconfig/node16": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^2.8.4",
+    "read-pkg": "^7.1.0",
+    "rimraf": "^4.1.2",
+    "rollup": "^3.17.2",
+    "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-swc3": "^0.8.0",
+    "rollup-plugin-ts": "^3.2.0",
+    "typescript": "^4.9.5"
+  }
+}

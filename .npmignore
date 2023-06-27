@@ -1,0 +1,7 @@
+.configs
+.vscode
+.eslintignore
+.eslintrc.js
+.prettierrc
+tsconfig.eslint.json
+tsconfig.json
