@@ -1,0 +1,6 @@
+{
+  "project": "tsconfig.json",
+  "overwrite": true,
+  "noBackup": true,
+  "output": "src"
+}

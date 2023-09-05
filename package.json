@@ -15,8 +15,11 @@
   "scripts": {
     "lint": "eslint --quiet --ext ts,tsx .",
     "clean": "rimraf dist artifact",
+    "ctix:single": "cross-env NODE_ENV=production npx ctix single -p ./tsconfig.json --config ./.configs/.ctirc",
+    "ctix:remove": "cross-env NODE_ENV=production npx ctix remove -p ./tsconfig.json --config ./.configs/.ctirc",
     "prerollup:dev": "npm run clean",
-    "rollup:dev": "cross-env NODE_ENV=production rollup --config ./.configs/rollup.config.dev.ts --configPlugin ts"
+    "rollup:dev": "cross-env NODE_ENV=production rollup --config ./.configs/rollup.config.dev.ts --configPlugin ts",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -35,8 +38,10 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^11.0.0",
     "@tsconfig/node16": "^1.0.3",
+    "@types/jest": "^29.5.2",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
+    "create-ts-index": "^1.14.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.34.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
@@ -54,6 +59,14 @@
     "rollup-plugin-dts": "^5.2.0",
     "rollup-plugin-swc3": "^0.8.0",
     "rollup-plugin-ts": "^3.2.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "fp-ts": "^2.16.0",
+    "jest": "^29.6.0",
+    "jsonc-parser": "^3.2.0",
+    "ts-jest": "^29.1.1"
   }
 }
